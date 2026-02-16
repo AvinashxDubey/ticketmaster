@@ -64,7 +64,7 @@ contract TicketMaster is ERC721 {
 
         require(msg.value>=occasions[_id].cost);
         require(seatTaken[_id][_seat]==address(0));
-        require(_seat<=occasions[_id].cost);
+        require(_seat<=occasions[_id].maxTickets);
 
         occasions[_id].tickets-=1;
         seatTaken[_id][_seat] = msg.sender;
